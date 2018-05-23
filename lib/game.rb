@@ -24,7 +24,7 @@ class Game
     elsif (roll.has_value?(:paper) && roll.has_value?(:scissors))
       @started = false
       "Scissors vs paper!"
-    elsif (roll[])
+    elsif (roll[:left] == roll[:right])
       "Tie game. Try again!"
     else
       :UNKNOWN
