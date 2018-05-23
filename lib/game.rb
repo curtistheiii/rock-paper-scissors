@@ -13,22 +13,15 @@ class Game
   def play(left = nil, right = nil)
     raise 'Game must first be started' unless started?
     return nil unless (left && right)
-    if (left == :rock && right == :scissors)
+
+    roll = {"left" => left, "right" => right}
+    if (roll.has_value?(:rock) && roll.has_value?(:scissors))
       @started = false
       "Rock beats scissors!"
-    elsif (left == :scissors && right == :rock)
-      @started = false
-      "Rock beats scissors!"
-    elsif (left == :paper && right == :rock)
+    elsif (roll.has_value?(:rock) && roll.has_value?(:paper))
       @started = false
       "Paper beats rock!"
-    elsif (left == :rock && right == :paper)
-      @started = false
-      "Paper beats rock!"
-    elsif (left == :paper && right == :scissors)
-      @started = false
-      "Scissors vs paper!"
-    elsif (left == :scissors && right == :paper)
+    elsif (roll.has_value?(:paper) && roll.has_value?(:scissors))
       @started = false
       "Scissors vs paper!"
     elsif (left == :scissors && right == :scissors)
