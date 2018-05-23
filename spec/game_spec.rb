@@ -99,9 +99,13 @@ describe 'A game of rock paper scissors' do
         game.start
         expect(game.play(:scissors, :scissors)).to eq("Tie game. Try again!")
         expect(game.started?).to be_truthy
+        game.start
+        expect(game.play(:paper, :paper)).to eq("Tie game. Try again!")
+        expect(game.started?).to be_truthy
+        game.start
+        expect(game.play(:rock, :rock)).to eq("Tie game. Try again!")
+        expect(game.started?).to be_truthy
       end
-      skip('returns "Tie game. Try again!"')
-      skip('is not finished')
     end
 
   end

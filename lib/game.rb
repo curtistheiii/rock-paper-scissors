@@ -31,6 +31,12 @@ class Game
     elsif (left == :scissors && right == :paper)
       @started = false
       "Scissors vs paper!"
+    elsif (left == :scissors && right == :scissors)
+      "Tie game. Try again!"
+    elsif (left == :paper && right == :paper)
+      "Tie game. Try again!"
+    elsif (left == :rock && right == :rock)
+      "Tie game. Try again!"
     else
       :UNKNOWN
     end
