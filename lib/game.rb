@@ -14,7 +14,7 @@ class Game
     raise 'Game must first be started' unless started?
     return nil unless (left && right)
 
-    roll = {"left" => left, "right" => right}
+    roll = {:left => left, :right => right}
     if (roll.has_value?(:rock) && roll.has_value?(:scissors))
       @started = false
       "Rock beats scissors!"
@@ -24,11 +24,7 @@ class Game
     elsif (roll.has_value?(:paper) && roll.has_value?(:scissors))
       @started = false
       "Scissors vs paper!"
-    elsif (left == :scissors && right == :scissors)
-      "Tie game. Try again!"
-    elsif (left == :paper && right == :paper)
-      "Tie game. Try again!"
-    elsif (left == :rock && right == :rock)
+    elsif (roll[])
       "Tie game. Try again!"
     else
       :UNKNOWN
